@@ -1,5 +1,9 @@
 # vuedirectorywatch
 
+Command To Clone Repository
+
+git clone https://github.com/Annalakshmi1997/vuedirectorywatch.git
+
 ## Project setup
 
 Prerequisites to run the program
@@ -13,10 +17,9 @@ Run below command in Terminal window
 ```
 
 ### Compiles and hot-reloads for development
-```
+
 2. npm run serve
 
-```
 Then use below URL to call API
 
 http://localhost:8080/

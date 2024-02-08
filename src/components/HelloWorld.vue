@@ -6,12 +6,12 @@
     <div class="btn-group" style="margin-top: 1%;">
       <button type="button" style="width:180px;height:50px" class="btn btn-primary" @click="start">Start Watcher</button>
       <button type="button" style="width:180px;height:50px" class="btn btn-primary" @click="stop">Stop Watcher</button>
-      <button type="button" style="width:200px;height:50px" class="btn btn-primary" @click="getFileList">File Created List</button>
+      <button type="button" style="width:200px;height:50px" class="btn btn-primary" @click="getFileList">File List With Action Type</button>
     </div>
     <div v-if="Showlist">
       <table style="width:80%;margin-top: 5%;margin-left: 10%;" border="1 solid">
         <tr style="height:40px;"><th>FileName</th>
-        <th style="font-weight:bold">Action</th>
+        <th style="font-weight:bold">Action Type</th>
         <th style="font-weight:bold">TaskStartTime</th>
         <th style="font-weight:bold">TaskEndTime</th>
         <th style="font-weight:bold">Total Runtime</th>
@@ -78,9 +78,11 @@ export default{
       self.status =false
       axios.post("http://localhost:8081/stop-watcher")
       .then(function (response) {
-        alert(response.Msg);
+        console.log("Check log",response)
+        alert(response.data.Msg);
       })
       .catch(function (error) {
+        console.log("Check log1")
         console.log(error);
       });
     },
